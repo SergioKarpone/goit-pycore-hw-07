@@ -59,8 +59,8 @@ class AddressBook(UserDict):
                 # Додаємо оригінальну дату
                 upcoming_birthdays.append({
                     "name": record.name.value,
-                    "congratulation_date": congratulation_date.strftime("%Y.%m.%d"),
-                    "original_birthday": original_birthday.strftime("%Y.%m.%d")
+                    "congratulation_date": congratulation_date.strftime("%d.%m.%Y"),
+                    "original_birthday": original_birthday.strftime("%d.%m.%Y")
                 })
         
         # Сортуємо за датою привітання

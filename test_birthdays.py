@@ -1,4 +1,4 @@
-from assistant_bot import AddressBook, Record
+from src import AddressBook, Record
 from datetime import datetime, timedelta
 
 # Тестування базового функціоналу
@@ -150,5 +150,3 @@ if __name__ == "__main__":
     test_edge_cases()
     
     print("Тестування пройдено!")
-    print("\nДля запуску бота виконайте:")
-    print("python assistant_bot.py")

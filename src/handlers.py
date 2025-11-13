@@ -75,20 +75,16 @@ def show_birthday(args, book: AddressBook):
 # Показати дні народження на наступному тижні
 @input_error
 def birthdays(args, book: AddressBook):
-    
-    from datetime import datetime, timedelta
+    from datetime import datetime
     upcoming = book.get_upcoming_birthdays()
-    
-    # Поточна дата
-    current_date = datetime.today().date()
-    
-    print(f"\nДата сьогодні: {current_date.strftime('%Y.%m.%d')}")
     
     if not upcoming:
         return "На наступний тиждень привітань немає."
     
-    print("\nСписок привітань (за датою):")
-    result_lines = []
+    # Поточна дата
+    current_date = datetime.today().date()
+    result = f"Дата сьогодні: {current_date.strftime('%d.%m.%Y')}\n\n"
+    result += "Список привітань (за датою):\n"
     
     for item in upcoming:
         congrat_date = item['congratulation_date']
@@ -100,6 +96,6 @@ def birthdays(args, book: AddressBook):
         if congrat_date != original_date:
             output += f" (перенесено з {original_date})"
         
-        result_lines.append(output)
+        result += output + "\n"
     
-    return "\n".join(result_lines)
+    return result.strip()

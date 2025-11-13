@@ -48,5 +48,4 @@ class Birthday(Field):
     
     # Формат YYYY.MM.DD для сумісності
     def __str__(self):
-        
-        return self.value.strftime("%Y.%m.%d")
+        return self.value.strftime("%d.%m.%Y")
